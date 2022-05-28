@@ -1,7 +1,7 @@
 # Golang-api
 
-API CRUD en GO pour le cours : API - Go language & concurrent computing
-bibliotheque de film
+API CRUD en GO pour le cours : API - Go language & concurrent computing.
+Bibliotheque de films style PLEX, NETFLIX etc..
 
 ## architecture
 ```
