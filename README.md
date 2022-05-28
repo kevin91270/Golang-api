@@ -6,10 +6,10 @@ que celle vu en cours.
 Bibliotheque de films style PLEX, NETFLIX etc..
 
 ## STARTUP
-Lancer la commande pour docker
+Lancer la commande pour docker  
 `docker compose up -d`
 
-Lancer le projet
+Lancer le projet  
 `go run main.go`
 
 ## architecture
