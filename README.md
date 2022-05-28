@@ -26,6 +26,7 @@ Lancer le projet
 │    │   └── UpdateFilm.go
 │    └── models
 │        └── film.go
+├── docker-compose.yml
 ├── go.mod
 ├── go.sum
 └── main.go
