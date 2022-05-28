@@ -29,3 +29,9 @@ Film :
 - `POST /film {title, author, desc}`
 - `PUT /film/:id {title, author, desc}`
 - `DELETE /users/:id`
+
+## Modele
+- Id
+- Title
+- Author
+- Desc
