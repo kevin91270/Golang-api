@@ -16,7 +16,7 @@ Lancer le projet
 ```
 ├── pkg
 │    ├── db
-│    │   ├── db.go
+│    │   └── db.go
 │    ├── handlers
 │    │   ├── Add.go
 │    │   ├── Delete.go
