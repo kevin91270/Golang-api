@@ -6,7 +6,8 @@ package models
 type Film struct {
     Id int `json:"id" gorm:primaryKey`
     Title  string `json:"title"`
-    Author string `json:"author"`
-    Desc   string `json:"desc"`
+    Director string `json:"director"`
+    Synopsis  string `json:"synopsis"`
+    Score int `json:"score"`
     UserId int `json:"user"`
 }

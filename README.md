@@ -18,14 +18,16 @@ Lancer le projet
 │    ├── db
 │    │   ├── db.go
 │    ├── handlers
-│    │   ├── AddFilm.go
-│    │   ├── DeleteFilm.go
-│    │   ├── GetAllFilms.go
-│    │   ├── GetFilm.go
+│    │   ├── Add.go
+│    │   ├── Delete.go
+│    │   ├── GetAll.go
+│    │   ├── Get.go
 │    │   ├── handlers.go
-│    │   └── UpdateFilm.go
+│    │   └── Update.go
 │    └── models
+│        ├── user.go
 │        └── film.go
+├── .env
 ├── docker-compose.yml
 ├── go.mod
 ├── go.sum
@@ -35,9 +37,16 @@ Lancer le projet
 ### Routes
 Film :
 - `GET /films`
-- `GET /film/:id`
-- `POST /film {title, author, desc}`
-- `PUT /film/:id {title, author, desc}`
+- `GET /films/:id`
+- `POST /films {title, author, desc}`
+- `PUT /films/:id {title, author, desc}`
+- `DELETE /films/:id`
+
+User :
+- `GET /users`
+- `GET /users/:id`
+- `POST /users {title, author, desc}`
+- `PUT /users/:id {title, author, desc}`
 - `DELETE /users/:id`
 
 ## Modele
@@ -45,5 +54,12 @@ Film :
 ### Film :
 - Id
 - Title
-- Author
-- Desc
+- Director
+- Synopsis
+- Score
+- UserId
+
+### User :
+- Id
+- Pseudo
+- Films
