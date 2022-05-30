@@ -1,9 +1,8 @@
 # Golang-api
 
 API CRUD en GO pour le cours : API - Go language & concurrent computing.  
-Utilisation de Gorilla/Mux pour le routage plutôt que gin afin d'essayer d'autre methode.  
-Gorm et Postgres
-que celle vu en cours.  
+Utilisation de Gorilla/Mux pour le routage plutôt que gin afin d'essayer d'autre methode que celle vu en cours.  
+Gorm et Postgres.  
 Bibliotheque de films style PLEX, NETFLIX etc..
 
 ## STARTUP
