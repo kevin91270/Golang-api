@@ -34,3 +34,24 @@ func (h handler) DeleteFilm(w http.ResponseWriter, r *http.Request) {
     w.WriteHeader(http.StatusOK)
     json.NewEncoder(w).Encode("Deleted")
 }
+
+func (h handler) DeleteUser(w http.ResponseWriter, r *http.Request) {
+    // lire un id dynamique en parametre
+    vars := mux.Vars(r)
+    id, _ := strconv.Atoi(vars["id"])
+
+    // trouver le film avec l'Id
+
+    var user models.User
+
+    if result := h.DB.First(&user, id); result.Error != nil {
+        fmt.Println(result.Error)
+    }
+
+    // suppression du film
+    h.DB.Delete(&user)
+
+    w.Header().Add("Content-Type", "application/json")
+    w.WriteHeader(http.StatusOK)
+    json.NewEncoder(w).Encode("Deleted")
+}

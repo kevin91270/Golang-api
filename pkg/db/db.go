@@ -19,6 +19,7 @@ func Init() *gorm.DB {
 
 	//migrer notre models
     db.AutoMigrate(&models.Film{})
+	db.AutoMigrate(&models.User{})
 
     return db
 }

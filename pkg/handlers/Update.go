@@ -51,3 +51,37 @@ func (h handler) UpdateFilm(w http.ResponseWriter, r *http.Request) {
     w.WriteHeader(http.StatusOK)
     json.NewEncoder(w).Encode("Updated")
 }
+
+func (h handler) UpdateUser(w http.ResponseWriter, r *http.Request) {
+    // lire un id dynamique en parametre
+    vars := mux.Vars(r)
+    id, _ := strconv.Atoi(vars["id"])
+
+    // lire la requete dans le body
+    defer r.Body.Close()
+    body, err := ioutil.ReadAll(r.Body)
+
+    if err != nil {
+        log.Fatalln(err)
+    }
+
+    //parse JSON
+    var updatedUser models.User
+    json.Unmarshal(body, &updatedUser)
+
+    var user models.User
+
+    if result := h.DB.First(&user, id); result.Error != nil {
+        fmt.Println(result.Error)
+    }
+    //mise a jour des champs
+    user.Pseudo = updatedUser.Pseudo
+
+    //sauvegarde dans la db
+    h.DB.Save(&user)
+
+    //send response
+    w.Header().Add("Content-Type", "application/json")
+    w.WriteHeader(http.StatusOK)
+    json.NewEncoder(w).Encode("Updated")
+}

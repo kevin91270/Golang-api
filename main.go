@@ -23,6 +23,12 @@ func main() {
     router.HandleFunc("/film/{id}", h.UpdateFilm).Methods(http.MethodPut)
     router.HandleFunc("/film/{id}", h.DeleteFilm).Methods(http.MethodDelete)
 
+	router.HandleFunc("/users", h.GetAllUsers).Methods(http.MethodGet)
+    router.HandleFunc("/user/{id}", h.GetUser).Methods(http.MethodGet)
+    router.HandleFunc("/user", h.AddUser).Methods(http.MethodPost)
+    router.HandleFunc("/user/{id}", h.UpdateUser).Methods(http.MethodPut)
+    router.HandleFunc("/user/{id}", h.DeleteUser).Methods(http.MethodDelete)
+
     log.Println("API is running!")
     http.ListenAndServe(":4000", router)
 }

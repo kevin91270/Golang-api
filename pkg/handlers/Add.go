@@ -31,7 +31,30 @@ func (h handler) AddFilm(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(result.Error)
 	}
 
-	// Send a 201 created response
+	// retourne code de reponse 201 creation
+	w.Header().Add("Content-Type", "application/json")
+	w.WriteHeader(http.StatusCreated)
+	json.NewEncoder(w).Encode("Created")
+}
+
+func (h handler) AddUser(w http.ResponseWriter, r *http.Request) {
+	// lire la requete
+	defer r.Body.Close()
+	body, err := ioutil.ReadAll(r.Body)
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+	
+	var user models.User
+	json.Unmarshal(body, &user)
+
+	// ajouter à la table Films
+	if result := h.DB.Create(&user); result.Error != nil {
+		fmt.Println(result.Error)
+	}
+
+	// retourne code de reponse 201 creation
 	w.Header().Add("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode("Created")

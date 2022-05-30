@@ -29,3 +29,19 @@ func (h handler) GetFilm(w http.ResponseWriter, r *http.Request) {
     w.WriteHeader(http.StatusOK)
     json.NewEncoder(w).Encode(film)
 }
+
+func (h handler) GetUser(w http.ResponseWriter, r *http.Request) {
+    // lire un id dynamique en parametre
+    vars := mux.Vars(r)
+    id, _ := strconv.Atoi(vars["id"])
+
+    // trouver un film avec l'Id
+    var user models.User
+
+    if result := h.DB.First(&user, id); result.Error != nil {
+        fmt.Println(result.Error)
+    }
+    w.Header().Add("Content-Type", "application/json")
+    w.WriteHeader(http.StatusOK)
+    json.NewEncoder(w).Encode(user)
+}
