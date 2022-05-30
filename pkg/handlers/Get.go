@@ -35,10 +35,10 @@ func (h handler) GetUser(w http.ResponseWriter, r *http.Request) {
     vars := mux.Vars(r)
     id, _ := strconv.Atoi(vars["id"])
 
-    // trouver un film avec l'Id
+    // trouver un un avec l'Id
     var user models.User
 
-    if result := h.DB.First(&user, id); result.Error != nil {
+    if result := h.DB.Preload("Films").First(&user, id); result.Error != nil {
         fmt.Println(result.Error)
     }
     w.Header().Add("Content-Type", "application/json")

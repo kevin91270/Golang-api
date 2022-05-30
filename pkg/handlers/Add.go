@@ -49,7 +49,7 @@ func (h handler) AddUser(w http.ResponseWriter, r *http.Request) {
 	var user models.User
 	json.Unmarshal(body, &user)
 
-	// ajouter à la table Films
+	// ajouter à la table Users
 	if result := h.DB.Create(&user); result.Error != nil {
 		fmt.Println(result.Error)
 	}

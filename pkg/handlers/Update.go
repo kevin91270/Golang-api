@@ -40,8 +40,10 @@ func (h handler) UpdateFilm(w http.ResponseWriter, r *http.Request) {
     }
     //mise a jour des champs
     film.Title = updatedFilm.Title
-    film.Author = updatedFilm.Author
-    film.Desc = updatedFilm.Desc
+    film.Director = updatedFilm.Director
+    film.Synopsis = updatedFilm.Synopsis
+    film.Score = updatedFilm.Score
+    film.UserId = updatedFilm.UserId
 
     //sauvegarde dans la db
     h.DB.Save(&film)

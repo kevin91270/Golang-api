@@ -16,7 +16,7 @@ func main() {
 	//utilisation de mux pour le routage
     router := mux.NewRouter()
 
-	//differente route pour l'api
+	//differentes routes pour l'api
     router.HandleFunc("/films", h.GetAllFilms).Methods(http.MethodGet)
     router.HandleFunc("/films/{id}", h.GetFilm).Methods(http.MethodGet)
     router.HandleFunc("/films", h.AddFilm).Methods(http.MethodPost)

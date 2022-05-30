@@ -48,7 +48,7 @@ func (h handler) DeleteUser(w http.ResponseWriter, r *http.Request) {
         fmt.Println(result.Error)
     }
 
-    // suppression du film
+    // suppression de l'user
     h.DB.Delete(&user)
 
     w.Header().Add("Content-Type", "application/json")
