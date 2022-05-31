@@ -38,15 +38,15 @@ Lancer le projet
 Film :
 - `GET /films`
 - `GET /films/:id`
-- `POST /films {title, author, desc}`
-- `PUT /films/:id {title, author, desc}`
+- `POST /films {title, director, synopsis, score, userid}`
+- `PUT /films/:id {title, director, synopsis, score, userid}`
 - `DELETE /films/:id`
 
 User :
 - `GET /users`
 - `GET /users/:id`
-- `POST /users {title, author, desc}`
-- `PUT /users/:id {title, author, desc}`
+- `POST /users {pseudo, film}`
+- `PUT /users/:id {pseudo, film}`
 - `DELETE /users/:id`
 
 ## Modele
