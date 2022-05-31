@@ -17,7 +17,7 @@ func Init() *gorm.DB {
         log.Fatalln(err)
     }
 
-	//migrer notre models
+	//migrer nos models
     db.AutoMigrate(&models.Film{})
 	db.AutoMigrate(&models.User{})
 

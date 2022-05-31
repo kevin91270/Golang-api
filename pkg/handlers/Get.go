@@ -14,6 +14,7 @@ import (
 //pour la definir en receiver function
 //getfilm est une fonction qui peut recevoir un handler
 //de connexion afin d'eviter de creer une nouvelle connexion a la db
+//obtenir les infos d'un film
 func (h handler) GetFilm(w http.ResponseWriter, r *http.Request) {
     // lire un id dynamique en parametre
     vars := mux.Vars(r)
@@ -30,6 +31,7 @@ func (h handler) GetFilm(w http.ResponseWriter, r *http.Request) {
     json.NewEncoder(w).Encode(film)
 }
 
+//obtenir les infos d'un utilisateur
 func (h handler) GetUser(w http.ResponseWriter, r *http.Request) {
     // lire un id dynamique en parametre
     vars := mux.Vars(r)

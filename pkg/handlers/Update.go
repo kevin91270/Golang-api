@@ -16,6 +16,7 @@ import (
 //pour la definir en receiver function
 //updatefilm est une fonction qui peut recevoir un handler
 //de connexion afin d'eviter de creer une nouvelle connexion a la db
+//mettre à jour un film
 func (h handler) UpdateFilm(w http.ResponseWriter, r *http.Request) {
     // lire un id dynamique en parametre
     vars := mux.Vars(r)
@@ -54,6 +55,7 @@ func (h handler) UpdateFilm(w http.ResponseWriter, r *http.Request) {
     json.NewEncoder(w).Encode("Updated")
 }
 
+//mettre à jour un user
 func (h handler) UpdateUser(w http.ResponseWriter, r *http.Request) {
     // lire un id dynamique en parametre
     vars := mux.Vars(r)

@@ -14,6 +14,7 @@ import (
 //pour la definir en receiver function
 //addfilm est une fonction qui peut recevoir un handler
 //de connexion afin d'eviter de creer une nouvelle connexion a la db
+//fonction pour ajouter un film
 func (h handler) AddFilm(w http.ResponseWriter, r *http.Request) {
 	// lire la requete
 	defer r.Body.Close()
@@ -37,6 +38,7 @@ func (h handler) AddFilm(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode("Created")
 }
 
+//fonction pour ajouter un user
 func (h handler) AddUser(w http.ResponseWriter, r *http.Request) {
 	// lire la requete
 	defer r.Body.Close()

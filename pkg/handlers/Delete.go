@@ -14,6 +14,7 @@ import (
 //pour la definir en receiver function
 //deleteFilm est une fonction qui peut recevoir un handler
 //de connexion afin d'eviter de creer une nouvelle connexion a la db
+//supprimer un film
 func (h handler) DeleteFilm(w http.ResponseWriter, r *http.Request) {
     // lire un id dynamique en parametre
     vars := mux.Vars(r)
@@ -35,6 +36,7 @@ func (h handler) DeleteFilm(w http.ResponseWriter, r *http.Request) {
     json.NewEncoder(w).Encode("Deleted")
 }
 
+//supprimer un user
 func (h handler) DeleteUser(w http.ResponseWriter, r *http.Request) {
     // lire un id dynamique en parametre
     vars := mux.Vars(r)
